@@ -1,0 +1,9 @@
+#存放所有接口对应的yaml文件
+test_get_access_token:
+  apiname: test_get_access_token
+  apidescription: 获取access_token
+  yamlfilename: test_wx_get_token.yaml
+test_create_tag:
+  apiname: test_create_tag
+  apidescription: 用户标签管理-创建标签接口
+  yamlfilename: test_wx_create_tag.yaml

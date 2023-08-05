@@ -1,0 +1,4 @@
+{
+    "allowed_modules": ["Case", "Case.wxgzh", "Case.demo3","Case.demo2"],
+    "allowed_classes": ["WxGzh", "poi", "Example"]
+}

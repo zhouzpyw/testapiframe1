@@ -1,0 +1,5 @@
+INFO     main.testapis:test_baseapi.py:49 开始测试接口get_access_token......
+INFO     main.testapis:test_baseapi.py:50 开始执行第1条用例，用例标题为：正例
+DEBUG    main.testapis:test_baseapi.py:57 请求获取access_token，请求报文：https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxc2007f0b1387d1ea&secret=e3a83fc0db6d79fb5900559bcdd324a4
+DEBUG    main.testapis:test_baseapi.py:58 请求获取access_token，返回报文：{'access_token': '71_IhiCCiUakc4azNuQ8kkwWiqYr9cXBcEbHF4f2nIma4uMOESxvI5EDHqKYXrLtkc9wdorDWZv3RXHc9PYAUqlGilpwGVwF6ViXBZYIslpyy9KI01z8lEnp77blmsTJAcACAHXO', 'expires_in': 7200}
+INFO     main.testapis:test_baseapi.py:59 请求获取access_token成功！测试通过!

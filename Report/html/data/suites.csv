@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"failed","Sat Aug 05 23:13:39 CST 2023","Sat Aug 05 23:13:39 CST 2023","128","Case","test_baseapi","TestBaseApi","","","appid错误，获取token失败","微信公众号获取access_token接口，参数格式要求为form表单。appid表示第三方用户唯一凭证，secret表示第三方用户唯一凭证密钥，即appsecret"
+"passed","Sat Aug 05 23:13:38 CST 2023","Sat Aug 05 23:13:39 CST 2023","376","Case","test_baseapi","TestBaseApi","","","正例","微信公众号获取access_token接口，参数格式要求为form表单。appid表示第三方用户唯一凭证，secret表示第三方用户唯一凭证密钥，即appsecret"

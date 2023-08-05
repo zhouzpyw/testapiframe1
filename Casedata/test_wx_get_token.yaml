@@ -1,0 +1,27 @@
+feature: 微信公众号
+story: 获取access_token
+description: 微信公众号获取access_token接口，参数格式要求为form表单。appid表示第三方用户唯一凭证，secret表示第三方用户唯一凭证密钥，即appsecret
+title: ${title}
+requst:
+  method: GET
+  url: /cgi-bin/token
+parametrize:
+  #appid:第三方用户唯一凭证
+  #secret:第三方用户唯一凭证密钥，即appsecret
+  - [ 'number','title','exceptresult','form','data' ]
+  - [1,'正例','access_token',{grant_type: client_credential,appid: wxc2007f0b1387d1ea,secret: e3a83fc0db6d79fb5900559bcdd324a4},'']
+  #- [2,'appid错误，获取token失败','access_token',{grant_type: client_credential,appid: wxc2007f0b1387d1ea2,secret: e3a83fc0db6d79fb5900559bcdd324a4},'']
+extract:
+  needif: True #是否需要提取数据，用于断言或接口关联
+  filename: access_token_temp.yaml
+  datakey: access_token #需要提取数据的键
+  datavalue: access_token #需要提取数据的值(响应json格式下对应key的值)
+#code: [ status_code, (.*), 0 ] # R.1.
+validate:
+  asserttype: inner #包含断言
+  exceptresult: ${exceptresult} #预期结果
+needtoken: Flase #判断是否需要获取token
+# equals: # 断言相等
+#   状态码断言:
+#     - ${assert_code}         # P.3. 断言也使用变量
+#     - ${code}                # R.2. 使用提前到的变量进行断言

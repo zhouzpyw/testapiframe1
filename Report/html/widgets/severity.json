@@ -1,0 +1,1 @@
+[{"uid":"f94449d9821ff6b9","name":"appid错误，获取token失败","time":{"start":1691248419010,"stop":1691248419138,"duration":128},"status":"failed","severity":"normal"},{"uid":"18eff76b6ed0eece","name":"正例","time":{"start":1691248418630,"stop":1691248419006,"duration":376},"status":"passed","severity":"normal"}]

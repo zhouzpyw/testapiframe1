@@ -1,0 +1,25 @@
+feature: 用户相关
+story: 注册
+
+title: ${title} # P.1.用例标题使用参数化变量
+request:
+ method: POST
+ url: ${base_url}/login/sign_up   # C.也可以只写/login/sign_up
+ json:
+   email: ${email}            # P.2.参数使用变量
+   password: ${str(password)} # P.3. 参数使用变量
+extract:
+ code: [ status_code, (.*), 0 ] # R.1. 提取数据，用于断言或接口关联
+validate:
+ equals: # 断言相等
+   状态码断言:
+     - ${assert_code}         # P.3. 断言也使用变量
+     - ${code}                # R.2. 使用提前到的变量进行断言
+parametrize:
+ - ["title","email", "password","assert_code"]
+ - ["账号为空", "", "11111111", 422]
+ - ["密码均为空", "1111111@qq.com", "", 422]
+ - ["账号密码均为空", "", "", 422]
+ - ["账号不符合邮箱规则", "11111111", "1111111", 422]
+ - ["注册成功", "sanmu_01@qqqqqq.com", "password", 200 ]
+ - ["注册成功", "sabmu_02@qq.com", "password", 200 ]
