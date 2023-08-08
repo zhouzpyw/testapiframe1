@@ -7,13 +7,13 @@ from Comm.yaml_utils import yaml_read
 
 
 def jn_token(filename):
-    # 从yaml文件中获取是否需要的标志位
+    '''
+    # 从yaml文件中获取是否需要获取token的标志位
+    :param filename: yaml文件地址
+    :return: True or False
+    '''
     data = yaml_read(filename)
     if data['needtoken'] == True:
         return True
     else:
         return False
-# if __name__ == '__main__':
-#     print(jn_token('test_wx_get_token.yaml'))
-#     if jn_token('test_wx_get_token.yaml') == True:
-#         print('ok')

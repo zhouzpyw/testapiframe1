@@ -7,15 +7,16 @@ import os
 from configparser import ConfigParser
 
 
-
-
-def read_ini_file(sec,opt):
+def read_ini_file(sec, opt):
     '''
     获取指定节中指定配置项的值
+    :param sec: config.ini文件中的section
+    :param opt: config.ini文件中的option
+    :return: 指定section下指定option的值
     '''
     # 使用相对目录确定文件位置
-    conf_dir = os.path.dirname(__file__) #获取当前文件所在目录
-    conf_file = os.path.join(conf_dir, 'config.ini') #获取配置文件所在位置
+    conf_dir = os.path.dirname(__file__)  # 获取当前文件所在目录
+    conf_file = os.path.join(conf_dir, 'config.ini')  # 获取配置文件所在位置
     # 实例化ConfigParser类，读取配置文件
     config = ConfigParser()
     config.read(conf_file, encoding='UTF-8')
@@ -27,11 +28,11 @@ def read_ini_file(sec,opt):
         section_dict = {}
         options = config.options(section)
         for option in options:
-            value = config.get(section, option,raw=True)
+            value = config.get(section, option, raw=True)
             section_dict[option] = value
         int_result[section] = section_dict
     try:
-        inivalue = int_result.get(sec).get(opt)  #节和option分别作为key
+        inivalue = int_result.get(sec).get(opt)  # 节和option分别作为key
         return inivalue
     except AttributeError:
         # 处理字典中的键不存在或值为None的情况
